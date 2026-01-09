@@ -12,8 +12,9 @@ pipeline{
         sh "pwd"
         echo "Build-ID-env:${env.BUILD_ID}"
         echo "Build-ID:$BUILD_ID"                
+        echo "Build-ID:$BUILD_NUMBER"                
         sh """
-        echo "Build-NO:${env.BUILD_NUMBER}" > $LOG_FILE
+        echo "Build-NO-env:${env.BUILD_NUMBER}" > $LOG_FILE
         """
       }
     }
