@@ -1,5 +1,5 @@
 pipeline{
-  agent {'label:node-1'}
+  agent {label 'node-1'}
   environment {
     DIR="job1"
     LOG_FILE="job-${env.BUILD_NUMBER}.log"
