@@ -3,8 +3,8 @@ pipeline{
   stages{
     stage("Build"){
       steps{
-        sh "mkdir job1"
         sh "pwd"
+        sh "mkdir -p job1"
         sh "cd job1"
         echo "Building version...${env.BUILD_NUMBER}"
         echo "Building version...${env.BUILD_NUMBER}" > job1-${env.BUILD_NUMBER}.log
