@@ -4,12 +4,16 @@ pipeline{
     DIR="job1"
     LOG_FILE="job-${env.BUILD_NUMBER}.log"
   }
+  parameters{
+    string{name:'PERSON', defaultvalue:'Fola',description:'what should I call you?'}
+  }
   stages{
     stage("Build"){
       environment {
         DIR2="job1000"
       }      
       steps{
+        echo "Hello ${params.PERSON}"
         sh "mkdir -p $DIR"
         sh "cd $DIR"
         sh "pwd"
