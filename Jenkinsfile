@@ -6,6 +6,7 @@ pipeline{
   }
   parameters{
     string(name: 'PERSON', defaultValue: 'Fola', description: 'what should I call you?')
+    choice(name: 'CHOICE', choices:['one' , 'two', 'three'], description: 'Make a selection')
   }
   stages{
     stage("Build"){
@@ -14,6 +15,7 @@ pipeline{
       }      
       steps{
         echo "Hello ${params.PERSON}"
+        echo "Hello ${params.CHOICE}"
         sh "mkdir -p $DIR"
         sh "cd $DIR"
         sh "pwd"
