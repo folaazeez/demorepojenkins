@@ -1,16 +1,17 @@
 pipeline{
   agent any
   environment {
-    DIR="job-${env.BUILD_NUMBER}"
+    DIR="job1"
+    LOG_FILE="job-${env.BUILD_NUMBER}.log"
   }
   stages{
     stage("Build"){
       steps{
-        sh "pwd"
         sh "mkdir -p $DIR"
         sh "cd $DIR"
+        sh "pwd"
         sh """
-        echo "Build:${env.BUILD_NUMBER}" > log${env.BUILD_NUMBER}
+        echo "Build:${env.BUILD_NUMBER}" > $LOG_FILE
         """
       }
     }
