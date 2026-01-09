@@ -5,7 +5,7 @@ pipeline{
     LOG_FILE="job-${env.BUILD_NUMBER}.log"
   }
   parameters{
-    string{name:'PERSON', defaultvalue:'Fola',description:'what should I call you?'}
+    string{name: 'PERSON', defaultValue: 'Fola', description: 'what should I call you?'}
   }
   stages{
     stage("Build"){
