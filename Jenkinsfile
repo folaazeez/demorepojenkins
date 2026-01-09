@@ -11,13 +11,14 @@ pipeline{
         sh "cd $DIR"
         sh "pwd"
         sh """
+        echo "Build:${env.BUILD_ID}"        
         echo "Build:${env.BUILD_NUMBER}" > $LOG_FILE
         """
       }
     }
     stage("Test"){
       steps{
-        sh "echo "Testing..."
+        echo "Testing..."
       }    
     }
   } 
