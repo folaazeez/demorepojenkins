@@ -10,7 +10,7 @@ pipeline{
         sh "mkdir -p $DIR"
         sh "cd $DIR"
         sh """
-        echo "Building version...${env.BUILD_NUMBER}" > log${env.BUILD_NUMBER}
+        echo "Build:${env.BUILD_NUMBER}" > log${env.BUILD_NUMBER}
         """
       }
     }
