@@ -4,6 +4,7 @@ pipeline{
     stage("Build"){
       steps{
         echo "Build..."
+        echo "cma-${env.BUILD_NUMBER}"
       }
     }
     stage("Test"){
