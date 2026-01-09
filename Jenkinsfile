@@ -3,8 +3,8 @@ pipeline{
   stages{
     stage("Build"){
       steps{
-        echo "Build..."
-        echo "cma-${env.BUILD_NUMBER}"
+        echo "Building version...${env.BUILD_NUMBER}"
+        sh "touch job1-${env.BUILD_NUMBER}.log"
       }
     }
     stage("Test"){
