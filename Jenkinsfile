@@ -10,7 +10,8 @@ pipeline{
         sh "mkdir -p $DIR"
         sh "cd $DIR"
         sh "pwd"
-        echo "Build-ID:${env.BUILD_ID}"        
+        echo "Build-ID-env:${env.BUILD_ID}"
+        echo "Build-ID:$BUILD_ID"                
         sh """
         echo "Build-NO:${env.BUILD_NUMBER}" > $LOG_FILE
         """
