@@ -20,12 +20,5 @@ pipeline{
         echo "Testing..."
       }    
     }
-  }
-        
-    post {
-        always {
-            cleanWs()
-        }
-    }
-  
+  } 
 }
