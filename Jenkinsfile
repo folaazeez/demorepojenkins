@@ -9,7 +9,9 @@ pipeline{
         sh "pwd"
         sh "mkdir -p $DIR"
         sh "cd $DIR"
-        echo "Building version...${env.BUILD_NUMBER}" > $log${env.BUILD_NUMBER}
+        sh """
+        echo "Building version...${env.BUILD_NUMBER}" > log${env.BUILD_NUMBER}
+        """
       }
     }
     stage("Test"){
