@@ -5,6 +5,21 @@ pipeline{
     LOG_FILE="job-${env.BUILD_NUMBER}.log"
   }
   stages{
+    stage("Git Checkout"){
+      steps{
+        echo "Git Checkout..."
+      }    
+    }
+    stage("Scan"){
+      steps{
+        echo "Scanning..."
+      }    
+    }    
+    stage("Unit Test"){
+      steps{
+        echo "Unit Test..."
+      }    
+    }        
     stage("Build"){   
       steps{
         echo "Building Build-ID:$BUILD_ID"                
